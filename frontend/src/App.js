@@ -6,7 +6,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() =>{
-    axios.get('http://localhost:3001/api/message')
+    axios.get(`${process.env.REACT_APP_API}api/message`)
     .then(response => {
       setMessage(response.data.message);
     })
