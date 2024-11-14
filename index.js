@@ -11,6 +11,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/message', (req, res) =>{
-    res.json({ message: 'This is a message from the backend.'});
+    res.json({ message: 'This is a message from the deployed backend.'});
 })
 app.listen(port);
