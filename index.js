@@ -6,16 +6,15 @@ const app = express();
 const port = process.env.PORT || 3001;
 dotenv.config();
 app.use(cors());
+console.log(process.env.DB_SSL);
 const pool = new Pool({
     user:process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
-    ssl: true
+    ssl: process.env.DB_SSL === 'true'
 });
-
-console.log(pool);
 
 app.get('/', (req, res) => {
     res.send('Hello from backend root!');
